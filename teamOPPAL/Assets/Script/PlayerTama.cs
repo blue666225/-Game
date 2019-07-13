@@ -36,7 +36,7 @@ public class PlayerTama : MonoBehaviour
             Destroy(TamaPrefab);
             PlayerBullet.shotCount -= 1;
         }
-        else if (collision.gameObject.CompareTag("wall"))
+        else if (collision.gameObject.CompareTag("wall") || collision.gameObject.CompareTag("FrgileWall"))
         {
             TamaDeadth += 1;
             if (TamaDeadth == 2)
@@ -45,11 +45,12 @@ public class PlayerTama : MonoBehaviour
                 PlayerBullet.shotCount -= 1;
             }
         }
-        else if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("CastleWall"))
+        else if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("CastleWall") || collision.gameObject.CompareTag("Boss"))
         {
             PlayerBullet.shotCount -= 1;
             Destroy(TamaPrefab);
         }
+
         //else if (collision.gameObject.CompareTag("CastleWall"))
         //{
         //    CastleWallDestoy += 1;
