@@ -91,7 +91,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 3.5
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7770623448453198329
 MonoBehaviour:
@@ -105,7 +105,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05343efd9bb05074d894b6eed14b249b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 5
+  LandmiinePrefab: {fileID: 4749086395045611171, guid: 4ec870e6e11bcb14d9d60367aa58357e,
+    type: 3}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!114 &4141766621248699296
 MonoBehaviour:
   m_ObjectHideFlags: 0

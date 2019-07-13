@@ -26,7 +26,7 @@ public class Bomb : MonoBehaviour
         var a = Instantiate(GetParticle, transform.position, transform.rotation).GetComponent<ParticleSystem>();
 
         //a.Play();
-        Instantiate(GetRange, transform.position, transform.rotation);
+        Instantiate(GetRange, transform.position, transform.rotation);        
         Destroy(Landmine);       
     }
 
