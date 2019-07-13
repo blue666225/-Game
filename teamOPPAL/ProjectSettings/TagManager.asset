@@ -6,6 +6,15 @@ TagManager:
   tags:
   - wall
   - FragileWall
+  - Bomb
+  - Tama
+  - Enemy
+  - CatsleMain
+  - CastleWall
+  - EnemyTama
+  - PlayerTama
+  - Ground
+  - Fire
   layers:
   - Default
   - TransparentFX
@@ -15,7 +24,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Frgile
   - 
   - 
   - 

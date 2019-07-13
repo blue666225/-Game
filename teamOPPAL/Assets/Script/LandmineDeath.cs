@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class LandmineDeath : MonoBehaviour
 {
-    //public GameObject LandmiinePrefab;
     Vector3 origin1;
     Vector3 directions;
     List<GameObject> deathobjectlist = new List<GameObject>();
+    [SerializeField]
+    GameObject LandmiinePrefab;
     Vector3 center;
-    public float radius;
+    //public float radius;
+    [SerializeField]
+    LayerMask layerMask;
 
     // Start is called before the first frame update
     void Start()
@@ -21,13 +24,17 @@ public class LandmineDeath : MonoBehaviour
         //    Debug.Log("if来たよ");
         //    Destroy(hit.transform.gameObject);
         //}
-        ExpDestroy(center, radius);
+        var sphereCollider = GetComponent<SphereCollider>();
+        var radius2 = sphereCollider.radius * transform.lossyScale.x;
+        ExpDestroy(center, radius2);
     }
 
     void ExpDestroy(Vector3 center, float radius)
     {
-        Collider[] hitColliders = Physics.OverlapSphere(center, radius, 8);
+        center = transform.position;
+        Collider[] hitColliders = Physics.OverlapSphere(center, radius, layerMask);
         int i = 0;
+
         while (i < hitColliders.Length)
         {
             //hitColliders[i].SendMessage("鈴木");
