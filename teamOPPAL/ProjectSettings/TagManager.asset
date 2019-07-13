@@ -15,6 +15,7 @@ TagManager:
   - PlayerTama
   - Ground
   - Fire
+  - Boss
   layers:
   - Default
   - TransparentFX
