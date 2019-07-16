@@ -9,21 +9,18 @@ public class BossMove : MonoBehaviour
     //public float MoveSpeed;
     //public float speed;
     //public float attenuation;
-    //public Transform target;
-    public GameObject target;
+    public Transform target;
+    //public GameObject target;
     private NavMeshAgent nav;
     //private Vector3 velocity;
     // Start is called before the first frame update
     void Start()
     {
         //NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        //nav = GetComponent<NavMeshAgent>();
+        nav = GetComponent<NavMeshAgent>();
 
-        NavMeshAgent agent = GetComponent<NavMeshAgent>();
-        agent.destination = target.transform.position;
-        agent.speed = 10;
-
-
+      
+       
     }
 
     // Update is called once per frame
@@ -35,8 +32,8 @@ public class BossMove : MonoBehaviour
         //velocity *= attenuation;
         //transform.position += velocity *= Time.deltaTime;
 
-        //nav.SetDestination(target.position);
-       
+        //nav.destination=target.transform.position;
+        nav.SetDestination(target.position);
         
     }
 }
