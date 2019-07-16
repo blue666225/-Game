@@ -7,6 +7,7 @@ public class PlayerBullet : MonoBehaviour
     public float shotTime;
     public GameObject TamaPrefab;
     public static int shotCount;
+    public GameObject Smp;
 
     // Start is called before the first frame update
     void Start()
@@ -22,9 +23,9 @@ public class PlayerBullet : MonoBehaviour
             if (shotCount < 5)
             {
                 Shot();
+                Instantiate(Smp, transform.position, transform.rotation);
             }
-        }
-        
+        }       
     }
 
     void Shot()

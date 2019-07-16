@@ -14,6 +14,7 @@ public class LandmineDeath : MonoBehaviour
     [SerializeField]
     LayerMask layerMask;
 
+
     // Start is called before the first frame update
     void Start()
     {

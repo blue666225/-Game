@@ -17,8 +17,11 @@ public class HoutouMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        seconds += Time.deltaTime;
         Quaternion targetRotation = Quaternion.LookRotation(Player.position - transform.position);
+        Debug.Log("PlayerPosition = " + Player.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime
              * rotationSmooth);
     }
+
 }
