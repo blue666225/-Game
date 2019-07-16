@@ -37,7 +37,7 @@ public class EnemyTama : MonoBehaviour
             Destroy(TamaPrefab);
 
         }
-        else if (collision.gameObject.CompareTag("wall") || collision.gameObject.CompareTag("FrgileWall"))
+        else if (collision.gameObject.CompareTag("wall")/* || collision.gameObject.CompareTag("FrgileWall")*/)
         {
             TamaDeadth += 1;
 
