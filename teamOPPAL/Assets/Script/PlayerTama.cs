@@ -51,17 +51,17 @@ public class PlayerTama : MonoBehaviour
             PlayerBullet.shotCount -= 1;
             Destroy(TamaPrefab);
         }
-        else if (collision.gameObject.CompareTag("CastleWall"))
-        {
-            PlayerBullet.shotCount -= 1;
-            Destroy(TamaPrefab);
-            bossWallHp.hpSlider.value -= 40f;
-            if (bossWallHp.hpSlider.value <= 0)
-            {
-                Destroy(CastlePrefab);
-                //Destroy(this.bossWallHp.hpSlider);
-                Instantiate(bossWallHp.Bossslider, transform.position, transform.rotation);
-            }
-        }
+        //else if (collision.gameObject.CompareTag("CastleWall"))
+        //{
+        //    PlayerBullet.shotCount -= 1;
+        //    Destroy(TamaPrefab);
+        //    bossWallHp.hpSlider.value -= 40f;
+        //    if (bossWallHp.hpSlider.value <= 0)
+        //    {
+        //        Destroy(CastlePrefab);
+        //        //Destroy(this.bossWallHp.hpSlider);
+        //        Instantiate(bossWallHp.Bossslider, transform.position, transform.rotation);
+        //    }
+        //}
     }
 }
