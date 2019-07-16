@@ -55,11 +55,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Compile Include="Assets\BossCastleHp.cs" />
     <Compile Include="Assets\BossWallHp.cs" />
-=======
->>>>>>> 9a9d6c1fb38b69e2f8cc33f6e98d304d732125c0
     <Compile Include="Assets\EnemyInstallation.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\MenuSceneLoader.cs" />
     <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />

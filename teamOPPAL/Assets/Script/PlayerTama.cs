@@ -9,6 +9,7 @@ public class PlayerTama : MonoBehaviour
     public int TamaDeadth;
     public int CastleWallDestoy;
     public GameObject CastlePrefab;
+    public BossWallHp bossWallHp;
 
     private Rigidbody rb;
     // Start is called before the first frame update
@@ -45,19 +46,22 @@ public class PlayerTama : MonoBehaviour
                 PlayerBullet.shotCount -= 1;
             }
         }
-        else if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("CastleWall") || collision.gameObject.CompareTag("Boss"))
+        else if (collision.gameObject.CompareTag("Player") /*|| collision.gameObject.CompareTag("CastleWall") || collision.gameObject.CompareTag("Boss")*/)
         {
             PlayerBullet.shotCount -= 1;
             Destroy(TamaPrefab);
         }
-
-        //else if (collision.gameObject.CompareTag("CastleWall"))
-        //{
-        //    CastleWallDestoy += 1;
-        //    if (CastleWallDestoy == 3)
-        //    {
-        //        Destroy(CastlePrefab);
-        //    }
-        //}
+        else if (collision.gameObject.CompareTag("CastleWall"))
+        {
+            PlayerBullet.shotCount -= 1;
+            Destroy(TamaPrefab);
+            bossWallHp.hpSlider.value -= 40f;
+            if (bossWallHp.hpSlider.value <= 0)
+            {
+                Destroy(CastlePrefab);
+                //Destroy(this.bossWallHp.hpSlider);
+                Instantiate(bossWallHp.Bossslider, transform.position, transform.rotation);
+            }
+        }
     }
 }
