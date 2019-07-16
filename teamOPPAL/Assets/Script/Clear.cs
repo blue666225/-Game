@@ -8,6 +8,7 @@ public class Clear : MonoBehaviour
     private GameObject[] enemyObj;
     [SerializeField]
     Scene nextScene;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,12 +29,12 @@ public class Clear : MonoBehaviour
         //0になったらクリア
         if (enemyObj.Length == 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+            FadeManager.Instance.LoadScene(SceneManager.GetActiveScene().buildIndex + 1, 1.0f);
             //SceneManager.LoadScene("Stage1");
         }
         if (Input.GetButtonDown("Jump"))
         {
-            SceneManager.LoadScene(0);
+            FadeManager.Instance.LoadScene("Title",1.0f);
         }
     }
 }
