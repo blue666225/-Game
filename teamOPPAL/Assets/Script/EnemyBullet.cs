@@ -9,10 +9,14 @@ public class EnemyBullet : MonoBehaviour
     public float seconds;
     public GameObject Smp;
 
+    //追加
+    AudioSource audioSource;
+    public AudioClip enemyShotSE;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,8 +27,10 @@ public class EnemyBullet : MonoBehaviour
         if (seconds >= 2)
         {
             Shot();
-            seconds = 0;
+       
             Instantiate(Smp, transform.position, transform.rotation);
+            seconds = 0;
+            //audioSource.PlayOneShot(enemyShotSE);
         }
 
     }
@@ -34,5 +40,6 @@ public class EnemyBullet : MonoBehaviour
         GameObject Tama = Instantiate(TamaPrefab, transform.position, transform.rotation);
         Rigidbody tamarigidbody = Tama.GetComponent<Rigidbody>();
         tamarigidbody.AddForce(transform.forward * shotTime);
+
     }
 }

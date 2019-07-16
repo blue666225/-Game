@@ -46,7 +46,7 @@ public class PlayerTama : MonoBehaviour
                 PlayerBullet.shotCount -= 1;
             }
         }
-        else if (collision.gameObject.CompareTag("Player") /*|| collision.gameObject.CompareTag("CastleWall") || collision.gameObject.CompareTag("Boss")*/)
+        else if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("CastleWall") || collision.gameObject.CompareTag("Boss"))
         {
             PlayerBullet.shotCount -= 1;
             Destroy(TamaPrefab);

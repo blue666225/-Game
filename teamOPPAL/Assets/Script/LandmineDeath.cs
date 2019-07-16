@@ -13,6 +13,10 @@ public class LandmineDeath : MonoBehaviour
     //public float radius;
     [SerializeField]
     LayerMask layerMask;
+    //追加
+    AudioSource audioSource;
+    public AudioClip bombSE;
+
 
 
     // Start is called before the first frame update
@@ -27,11 +31,19 @@ public class LandmineDeath : MonoBehaviour
         //}
         var sphereCollider = GetComponent<SphereCollider>();
         var radius2 = sphereCollider.radius * transform.lossyScale.x;
+
+        //追加
+        audioSource = GetComponent<AudioSource>();
+
         ExpDestroy(center, radius2);
     }
 
     void ExpDestroy(Vector3 center, float radius)
     {
+
+        //音追加
+        audioSource.PlayOneShot(bombSE);
+
         center = transform.position;
         Collider[] hitColliders = Physics.OverlapSphere(center, radius, layerMask);
         int i = 0;

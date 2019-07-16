@@ -10,14 +10,20 @@ public class JetTama : MonoBehaviour
     public int CastleWallDestoy;
     public GameObject CastlePrefab;
     public GameObject JetTamaPrefab;
+
+    AudioSource audioSource;
+    public AudioClip jetSE;
  
     private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         TamaDeadth = 0;
         CastleWallDestoy = 0;
         rb = GetComponent<Rigidbody>();
+
+        audioSource.PlayOneShot(jetSE);
     }
 
     // Update is called once per frame

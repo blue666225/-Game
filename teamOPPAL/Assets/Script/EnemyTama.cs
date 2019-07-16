@@ -10,10 +10,15 @@ public class EnemyTama : MonoBehaviour
     public GameObject CastlePrefab;
     public GameObject JetTamaPrefab;
 
+    //追加
+    AudioSource audioSource;
+    public AudioClip destroy;
+
     private Rigidbody rb;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         TamaDeadth = 0;
         CastleWallDestoy = 0;
         rb = GetComponent<Rigidbody>();
@@ -33,9 +38,9 @@ public class EnemyTama : MonoBehaviour
         if (collision.gameObject.CompareTag("Player")
             || collision.gameObject.CompareTag("Tama") || collision.gameObject.CompareTag("Bomb"))
         {
+            audioSource.PlayOneShot(destroy);
             Destroy(collision.gameObject);
             Destroy(TamaPrefab);
-
         }
         else if (collision.gameObject.CompareTag("wall")/* || collision.gameObject.CompareTag("FrgileWall")*/)
         {
@@ -49,6 +54,7 @@ public class EnemyTama : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("Enemy"))
         {
+            audioSource.PlayOneShot(destroy);
             Destroy(TamaPrefab);
         }
         //else if (collision.gameObject.CompareTag("CastleWall"))
