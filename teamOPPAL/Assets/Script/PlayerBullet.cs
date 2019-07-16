@@ -8,11 +8,14 @@ public class PlayerBullet : MonoBehaviour
     public GameObject TamaPrefab;
     public static int shotCount;
     public GameObject Smp;
+    AudioSource audioSource;
+    public AudioClip plShotSE;//追加
 
     // Start is called before the first frame update
     void Start()
     {
         shotCount = 0;
+        audioSource = GetComponent<AudioSource>();////追加
     }
 
     // Update is called once per frame
@@ -34,5 +37,9 @@ public class PlayerBullet : MonoBehaviour
         Rigidbody tamarigidbody = Tama.GetComponent<Rigidbody>();
         tamarigidbody.AddForce(transform.forward * shotTime);
         shotCount += 1;
+
+        //音再生
+        audioSource.PlayOneShot(plShotSE);
+        
     }
 }

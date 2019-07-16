@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5851340721860879660}
   - component: {fileID: 5851340721860879635}
   - component: {fileID: 5851340721860879634}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy Move
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 5851340722320586461}
   - component: {fileID: 5851340722320586460}
   - component: {fileID: 5851340722320586435}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Body
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5851340722681386027}
   - component: {fileID: 5851340722681386020}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: EnemyBullet
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 5851340723475847606}
   - component: {fileID: 5851340723475847600}
   - component: {fileID: 5851340723475847607}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Bomb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 5851340723911974052}
   - component: {fileID: 5851340723911974059}
   - component: {fileID: 5851340723911974058}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Houtou
   m_TagString: Enemy
   m_Icon: {fileID: 0}
