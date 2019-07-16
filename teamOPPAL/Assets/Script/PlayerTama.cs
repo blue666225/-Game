@@ -29,7 +29,7 @@ public class PlayerTama : MonoBehaviour
     }
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy")
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("PlayerTama")
             || collision.gameObject.CompareTag("Tama") || collision.gameObject.CompareTag("Bomb"))
         {
             Destroy(collision.gameObject);
